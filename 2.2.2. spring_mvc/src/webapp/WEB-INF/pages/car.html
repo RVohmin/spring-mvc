@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Model</th>
+        <th scope="col">Series</th>
+        <th scope="col">Color</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="car, state : ${cars}">
+            <th th:utext="${state.count}">${car.id}</th>
+            <td th:utext="${car.model}"></td>
+            <td th:utext="${car.series}"></td>
+            <td th:utext="${car.color}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
